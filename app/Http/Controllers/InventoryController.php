@@ -83,4 +83,22 @@ class InventoryController extends Controller
     {
         return "this is delete page ".$id;
     }
+
+    public function inventory_list()
+    {
+        return view('inventory_list');
+    }
+
+    public function show_inventory_type($type, $brand, $model)
+    {
+        //return view('inventory_type')->with('type', '$type');
+        return view('inventory_type', compact('type','brand', 'model'));
+    }
+
+    public function person_incharge()
+    {
+      $pic = ['Ali', 'Abu', 'Ahmad', 'Siti'];
+
+      return view('person_incharge', compact('pic'));    
+    }
 }

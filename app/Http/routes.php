@@ -28,6 +28,13 @@ Route::get('/user', array('as' => 'user.home', function (){
 }));
 
 Route::get('/inventory/{type}', 'InventoryController@index');
-*/
+
 
 Route::resource('inventory', 'InventoryController');
+*/
+
+Route::get('/inventory_list', 'InventoryController@inventory_list');
+
+Route::get('/inventory_type/{type}/{brand}/{model}', 'InventoryController@show_inventory_type');
+
+Route::get('/person_incharge', 'InventoryController@person_incharge');
